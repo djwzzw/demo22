@@ -19,7 +19,7 @@ public class TestController {
         // 提取有关 PR 的信息
         if (pushEvent.getCommits() != null && !pushEvent.getCommits().isEmpty()) {
             pushEvent.getCommits().forEach(commit -> {
-                System.out.println("Author: " + commit.getAuthor().getName());
+                System.out.println("Authors: " + commit.getAuthor().getName());
                 System.out.println("Comment: " + commit.getMessage());
                 System.out.println("Files changed:");
                 commit.getAdded().forEach(file -> System.out.println("- Added: " + file));

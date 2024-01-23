@@ -1,6 +1,7 @@
 package com.example.demo2.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/hello")
 public class TestController {
 
-    @GetMapping("/helloword")
+    @PostMapping("/helloword")
     public String helloWorld(){
         String s = "hello world";
-        System.out.println("jinlaile ");
+        System.out.println("jinlaile");
         return s;
     }
 }

@@ -12,7 +12,7 @@ public class TestController {
     @PostMapping("/helloword")
     public String helloWorld(){
         String s = "hello world";
-        System.out.println("jinlaile ss");
+        System.out.println("jinlaile sss");
         return s;
     }
 }

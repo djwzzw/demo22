@@ -11,6 +11,7 @@ public class TestController {
     @GetMapping("/helloword")
     public String helloWorld(){
         String s = "hello world";
+        System.out.println("jinlaile ");
         return s;
     }
 }

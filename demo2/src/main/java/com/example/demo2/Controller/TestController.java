@@ -4,17 +4,16 @@ import com.example.demo2.entity.PushEvent;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/hello")
 public class TestController {
 
     @PostMapping("/helloword")
-    public ResponseEntity<String> helloWorld(@RequestBody PushEvent pushEvent){
+    public ResponseEntity<String> helloWorld( @RequestHeader("X-GitHub-Event") String eventType,
+                                              @RequestBody PushEvent pushEvent){
+        eventType.toLowerCase();
         // 处理 Webhook 事件的逻辑
         // 提取有关 PR 的信息
         if (pushEvent.getCommits() != null && !pushEvent.getCommits().isEmpty()) {
